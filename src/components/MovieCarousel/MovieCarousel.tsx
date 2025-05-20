@@ -10,7 +10,7 @@ import {
     CarouselPrevious,
     CarouselNext,
 } from "@/components/ui/carousel";
-
+import Image from "next/image";
 
 interface MovieCarouselProps {
     movies: IMovieDetail[];
@@ -69,9 +69,12 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ movies }) => {
                 {movies.map((movie) => (
                     <CarouselItem key={movie.id} className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/5 hover:scale-105 transition-transform">
                         <div className="p-2 cursor-pointer" onClick={() => navigate(movie.id)}>
-                            <img
+                            <Image
                                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                                width={300}
+                                height={450}
                                 className="rounded-t-3xl object-cover"
+                                alt={movie.title}
                             />
                             <div className="mt-2">
                                 <h4 className="text-base font-semibold ">{movie.title}</h4>

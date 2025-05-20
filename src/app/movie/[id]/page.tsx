@@ -17,7 +17,7 @@ const MovieDetailPage = () => {
     const [error, setError] = useState<string | null>(null);
     const [isFavorite, setIsFavorite] = useState(false);
     const { guestSessionId } = useGuestSession();
-    const [recommendations, setRecommendations] = useState<any[]>([]);
+    const [recommendations, setRecommendations] = useState<IMovieDetail[]>([]);
 
 
     // Cargar detalles de la película
@@ -131,7 +131,7 @@ const MovieDetailPage = () => {
             <div className="mt-10">
                 <h2 className="text-2xl font-bold">Recommendations</h2>
                 <div className="grid justify-items-center mt-6">
-                <MovieCarousel movies={recommendations}></MovieCarousel>
+                    <MovieCarousel movies={recommendations}></MovieCarousel>
                 </div>
             </div>
         </>

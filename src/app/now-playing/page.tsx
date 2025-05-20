@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 import { getNowPlayingMovies } from "@/services/movies/getNowPlayingMovies";
 import MovieList from "@/components/MovieList/MovieList";
 import Pagination from "@/components/Pagination/Pagination"
+import { IMovieDetail } from "@/types/MovieDetail";
 
 
 
 const NowPlayingClientPage = () => {
   const [loading, setLoading] = useState(false);
-  const [movies, setMovies] = useState<any[]>([]);
+  const [movies, setMovies] = useState<IMovieDetail[]>([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
